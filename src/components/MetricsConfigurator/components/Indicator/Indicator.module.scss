@@ -1,0 +1,47 @@
+.Indicator {
+  padding: 6px 8px;
+  background-color: rgba(#FFFFFF, .08);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  transition: background-color, transform 0.2s ease-in-out;
+
+  &:hover {
+    background-color: rgba(#FFFFFF, .09);
+  }
+
+  &__label {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #fff;
+    display: block;
+  }
+
+  &__btn {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+
+    &:active {
+      transform: translateY(1px);
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      color: rgba(#fff, .6);
+      transition: color 0.2s ease-in-out;
+    }
+
+    &:hover, &:focus {
+      svg {
+        color: rgba(#fff, .8);
+      }
+    }
+  }
+}

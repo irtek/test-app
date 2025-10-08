@@ -1,0 +1,258 @@
+.scrollbar-styled {
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(#fff, .2);
+    border-radius: 8px;
+  }
+}
+
+.metricsConfigurator {
+  background-color: #081236;
+  padding: 32px;
+  height: 100%;
+  flex: 1;
+  max-width: 1440px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  transition: opacity .4s ease-in-out;
+  opacity: 0;
+
+  &Loaded {
+    opacity: 1;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(#FFFFFF, .3);
+    max-height: 100%;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    margin: 0;
+  }
+
+  &__group {
+    &Title {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+      vertical-align: middle;
+      margin-bottom: 2px;
+      margin-top: 0;
+      color: rgba(#fff, .5);
+    }
+
+    &List {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    overflow: hidden !important;
+  }
+
+  &__scrollable {
+    @extend .scrollbar-styled;
+    overflow: auto;
+    height: 500px;
+  }
+
+  &__row {
+    --gap: 8px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    max-height: 100%;
+  }
+
+  &__noSearchResults {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-top: 30px;
+
+    span {
+      color: rgba(#fff, .7);
+      cursor: pointer;
+      text-decoration: underline;
+      text-decoration-style: dashed;
+      text-decoration-color: rgba(#fff, .5);
+      transition: color .2s ease-in-out;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  &__column {
+    $this: &;
+    flex: 1 0 calc(50% - var(--gap));
+    min-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    background-color: rgba(#000, .16);
+    box-sizing: border-box;
+
+    &Header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &Title {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      margin: 0;
+    }
+
+    &.metricsConfigurator__columnIndicators {
+
+
+      .metricsConfigurator__columnHeader {
+        padding: 4px 0;
+      }
+
+    }
+  }
+
+  &__removeAllIndicatorsBtn {
+    border: none;
+    background-color: rgba(#fff, .08);
+    border-radius: 8px;
+    padding: 2px 6px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    transition: background-color, color .2s ease-in-out;
+    user-select: none;
+
+    &:active {
+      transform: translateY(1px);
+    }
+
+    &:hover, &:focus {
+      background-color: rgba(#fff, .1);
+      color: rgba(#fff, .8);
+      cursor: pointer;
+    }
+
+    svg {
+      width: 16px;
+    }
+  }
+
+  &__columnCheckboxes {
+
+  }
+
+  &__columnIndicators {
+
+  }
+}
+
+.metricsConfiguratorSearch {
+  width: 100%;
+  position: relative;
+
+  &__icon {
+    position: absolute;
+    left: 8px;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__clearBtn {
+    border: none;
+    color: #fff;
+    padding: 0;
+    font-size: 22px;
+    width: 22px;
+    height: 22px;
+    line-height: 1;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: rgba(#fff, .08);
+    transition: background-color, color .2s ease-in-out;
+
+    &:hover {
+      background-color: rgba(#fff, .1);
+    }
+  }
+
+  &__input {
+    background-color: rgba(#fff, .08);
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    padding: 7px 8px 5px 36px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.4%;
+    width: 100%;
+    color: #fff;
+    transition: background-color .2s ease-in-out;
+
+    &:hover {
+      background-color: rgba(#fff, .1);
+    }
+
+    &:focus {
+      background-color: rgba(#fff, .15);
+
+      &::placeholder {
+        color: rgba(#fff, .5);
+      }
+    }
+
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      -webkit-appearance: none;
+    }
+
+    &::placeholder {
+      color: rgba(#fff, .8);
+    }
+  }
+
+}

@@ -1,0 +1,22 @@
+:root {
+  --tertiary-color: #5395DF;
+  --base-font: Inter;
+}
+
+@import 'loader';
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: var(--base-font), serif;
+}
+
+#root {
+  min-height: 100svh;
+  backdrop-filter: blur(24px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
