@@ -83,7 +83,7 @@
     height: 500px;
 
     @media screen and (max-width: 960px) {
-      max-height: 60svh;
+      max-height: 50svh;
     }
   }
 
@@ -187,14 +187,6 @@
     svg {
       width: 16px;
     }
-  }
-
-  &__columnCheckboxes {
-
-  }
-
-  &__columnIndicators {
-
   }
 }
 
