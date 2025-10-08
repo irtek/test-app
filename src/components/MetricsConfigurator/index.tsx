@@ -131,8 +131,11 @@ const MetricsConfigurator: React.FC<MetricsConfiguratorProps> = React.memo(({ite
     return (
         <section className={`${styles.metricsConfigurator} ${visible && styles.metricsConfiguratorLoaded}`}>
             <div className={styles.metricsConfigurator__inner}>
+
                 <h2 className={styles.metricsConfigurator__title}>Настройка показателей</h2>
+
                 <div className={styles.metricsConfigurator__row}>
+
                     <div className={styles.metricsConfigurator__column}>
                         <header className={styles.metricsConfigurator__columnHeader}>
                             <div className={styles.metricsConfiguratorSearch}>
@@ -207,6 +210,7 @@ const MetricsConfigurator: React.FC<MetricsConfiguratorProps> = React.memo(({ite
                             ))}
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
