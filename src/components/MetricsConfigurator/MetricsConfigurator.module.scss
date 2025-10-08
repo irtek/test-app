@@ -81,6 +81,10 @@
     @extend .scrollbar-styled;
     overflow: auto;
     height: 500px;
+
+    @media screen and (max-width: 960px) {
+      max-height: 60svh;
+    }
   }
 
   &__row {
