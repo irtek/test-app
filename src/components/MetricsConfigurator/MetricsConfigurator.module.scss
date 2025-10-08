@@ -25,6 +25,10 @@
   transition: opacity .4s ease-in-out;
   opacity: 0;
 
+  @media screen and (max-width: 960px) {
+    padding: 8px;
+  }
+
   &Loaded {
     opacity: 1;
   }
@@ -70,6 +74,7 @@
     flex-direction: column;
     gap: 2px;
     overflow: hidden !important;
+    box-sizing: border-box;
   }
 
   &__scrollable {
@@ -82,10 +87,14 @@
     --gap: 8px;
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    max-width: 100svw;
     flex-wrap: wrap;
     gap: var(--gap);
     max-height: 100%;
+
+    @media screen and (max-width: 960px) {
+      flex-direction: column;
+    }
   }
 
   &__noSearchResults {
@@ -112,13 +121,16 @@
   &__column {
     $this: &;
     flex: 1 0 calc(50% - var(--gap));
-    min-width: 500px;
     display: flex;
     flex-direction: column;
     gap: 16px;
     padding: 16px;
     background-color: rgba(#000, .16);
     box-sizing: border-box;
+
+    @media screen and (max-width: 960px) {
+      padding: 8px;
+    }
 
     &Header {
       display: flex;

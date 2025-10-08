@@ -10,11 +10,11 @@ interface CheckboxProps {
 
 const Checkbox: React.FC<CheckboxProps> = React.memo(({label, isChecked, onChange, value}) => {
     return (
-        <label className={styles.Checkbox}>
+        <div className={styles.Checkbox}>
             <input type="checkbox" className={styles.Checkbox__input} checked={isChecked}
                    onChange={() => onChange(value)}/>
             {label}
-        </label>
+        </div>
     );
 });
 
