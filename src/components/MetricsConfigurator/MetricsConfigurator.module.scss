@@ -15,7 +15,8 @@
 }
 
 .metricsConfigurator {
-  background-color: #081236;
+  --bg: #081236;
+  background-color: var(--bg);
   padding: 32px;
   height: 100%;
   flex: 1;
@@ -57,9 +58,14 @@
       font-size: 14px;
       line-height: 20px;
       vertical-align: middle;
-      margin-bottom: 2px;
+      padding-bottom: 2px;
+      margin-bottom: 0;
       margin-top: 0;
       color: rgba(#fff, .5);
+      position: sticky;
+      top: 0;
+      background-color: var(--bg);
+      z-index: 10;
     }
 
     &List {
